@@ -1,7 +1,7 @@
 package com.example.priorspring01.Service;
 
 import com.example.priorspring01.Entity.People;
-import com.example.priorspring01.Repo.PeopleRepository;
+import com.example.priorspring01.Repository.PeopleRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

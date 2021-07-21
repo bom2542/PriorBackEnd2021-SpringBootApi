@@ -1,4 +1,4 @@
-package com.example.priorspring01.Repo;
+package com.example.priorspring01.Repository;
 
 import com.example.priorspring01.Entity.People;
 import org.springframework.data.jpa.repository.JpaRepository;

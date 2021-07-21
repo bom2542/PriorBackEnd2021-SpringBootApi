@@ -1,7 +1,7 @@
 package com.example.priorspring01.Controller;
 
 import com.example.priorspring01.Entity.People;
-import com.example.priorspring01.Repo.PeopleRepository;
+import com.example.priorspring01.Repository.PeopleRepository;
 import com.example.priorspring01.Service.ApiService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
