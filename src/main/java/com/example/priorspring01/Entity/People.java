@@ -1,4 +1,4 @@
-package com.example.priorspring01.Model;
+package com.example.priorspring01.Entity;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonProperty;
@@ -9,9 +9,11 @@ import com.fasterxml.jackson.datatype.jsr310.deser.LocalDateTimeDeserializer;
 import com.fasterxml.jackson.datatype.jsr310.ser.LocalDateTimeSerializer;
 import lombok.Getter;
 import lombok.Setter;
-import org.hibernate.annotations.CreationTimestamp;
 
-import javax.persistence.*;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
 import java.time.LocalDateTime;
 
 @Entity
@@ -19,7 +21,8 @@ import java.time.LocalDateTime;
 @JsonPropertyOrder({"cid","title","firstname","middle_name","lastname","gender","birth_date","mobile","created_by","created_date","updated_date","is_deleted"})
 @Getter
 @Setter
-public class AddPeopleModel {
+
+public class People {
 
     @Id
     @JsonProperty("cid")
@@ -58,10 +61,8 @@ public class AddPeopleModel {
     @Column(name = "created_by")
     private String createdBy;
 
-    //AddPeopleModel(created_date)
     @JsonProperty("created_date")
     @Column(name = "created_date")
-//    @CreationTimestamp
     @JsonDeserialize(using = LocalDateTimeDeserializer.class)
     @JsonSerialize(using = LocalDateTimeSerializer.class)
     @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss")
@@ -69,12 +70,10 @@ public class AddPeopleModel {
 
     @JsonProperty("updated_date")
     @Column(name = "updated_date")
-    @JsonDeserialize(using = LocalDateTimeDeserializer.class)
-    @JsonSerialize(using = LocalDateTimeSerializer.class)
-    @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss")
-    private LocalDateTime updatedDate;
+    private String updatedDate;
 
     @JsonProperty("is_deleted")
     @Column(name = "is_deleted")
     private char isDeleted;
+
 }
